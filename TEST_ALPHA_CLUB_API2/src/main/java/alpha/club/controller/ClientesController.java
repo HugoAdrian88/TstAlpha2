@@ -55,10 +55,15 @@ public class ClientesController {
 						  }
 					  }
 				}
-				
+				for(Autos names: autos) {
+					 if(names.isActivo() == true) {
+						 autosfinal.add(names);
+			
+				}
+				}
 
-				if (autos.isEmpty()) {
-					return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+				if (autosfinal.isEmpty()) {
+					return new ResponseEntity<>(HttpStatus.NO_CONTENT); 
 				}
 
 				return new ResponseEntity<>(autos, HttpStatus.OK);
